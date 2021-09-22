@@ -1,0 +1,325 @@
+@import '_normalize.css';
+
+:root {
+  /** Colors */
+  --red-desaturated: hsl(0, 36%, 70%);
+  --red-soft: hsl(0, 93%, 68%);
+  --red-grayish: hsl(0, 6%, 24%);
+  --btn-grad-start: hsl(0, 80%, 86%);
+  --btn-grad-end: hsl(0, 74%, 74%);
+  --bg-grad-start: hsl(0, 0%, 100%);
+  --bg-grad-end: hsl(0, 100%, 98%);
+
+  /** Typography */
+  --body-font-family: 'Josefin Sans', sans-serif;
+
+  /** Other */
+  --transition-delay: 200ms;
+}
+
+@media (prefers-reduced-motion) {
+  :root {
+    --transition-delay: 0;
+  }
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--body-font-family);
+}
+
+.container {
+  background: linear-gradient(to top, var(--bg-grad-end), var(--bg-grad-start));
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.header {
+  padding: 1.75em 2em;
+}
+
+.header-logo {
+  height: 1.3em;
+  vertical-align: middle;
+}
+
+.intro {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.intro-image {
+  background: url(../images/hero-mobile.jpg) no-repeat left top;
+  background-size: cover;
+  height: 16rem;
+}
+
+.intro-content {
+  flex: 1;
+}
+
+.intro-content-wrapper {
+  max-width: 26rem;
+  margin: 0 auto;
+  padding: 2em;
+  text-align: center;
+}
+
+.intro-heading {
+  color: var(--red-grayish);
+  font-size: 2.5rem;
+  letter-spacing: 0.25em;
+  margin: 0.5em 0 0;
+  text-transform: uppercase;
+}
+
+.intro-heading span {
+  color: var(--red-desaturated);
+  font-weight: 300;
+}
+
+.intro-body {
+  color: var(--red-desaturated);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 2em;
+}
+
+.input-wrapper {
+  align-items: center;
+  border: 0.1em solid var(--red-desaturated);
+  border-radius: 9999px;
+  display: flex;
+  height: 3em;
+  margin-right: 1em;
+  padding: 0 3em 0 1.5em;
+  position: relative;
+}
+
+.form-input {
+  background: transparent;
+  border: none;
+  flex: 1;
+  font-size: 0.9rem;
+  min-width: 0;
+  padding: 0;
+}
+
+.form-input::placeholder {
+  color: var(--red-desaturated);
+}
+
+.form-input:focus {
+  outline: none;
+}
+
+.input-error-icon {
+  display: none;
+  padding: 0 0.75em;
+}
+
+.has-error {
+  border: 0.15em solid var(--red-soft);
+}
+
+.has-error .input-error-icon {
+  display: inline-block;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, var(--btn-grad-start), var(--btn-grad-end));
+  background-blend-mode: overlay;
+  background-color: transparent;
+  border: none;
+  border-radius: 9999px;
+  box-shadow: 0 0.5em 1em var(--btn-grad-start);
+  cursor: pointer;
+  height: 3em;
+  outline: none;
+  padding: 0.5em 1.75em;
+  position: absolute;
+  right: -1em;
+  transition: background-color var(--transition-delay) ease-in,
+    box-shadow var(--transition-delay) ease-in;
+}
+
+.submit-btn:hover,
+.submit-btn:focus {
+  background-color: hsla(0, 0%, 100%, 50%);
+  box-shadow: 0 1em 1.5em var(--btn-grad-start);
+}
+
+.submit-btn img {
+  vertical-align: middle;
+}
+
+.input-error {
+  color: var(--red-soft);
+  display: block;
+  font-size: 0.8rem;
+  padding: 0.75em 2em;
+  text-align: start;
+}
+
+.footer {
+  bottom: 0;
+  left: 0;
+  padding: 0.5em;
+  position: absolute;
+  right: 0;
+}
+
+.attribution {
+  color: var(--red-desaturated);
+  display: block;
+  font-size: 0.75em;
+  text-align: center;
+}
+
+.attribution a {
+  color: var(--red-grayish);
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+@media only screen and (min-width: 768px) {
+  .header {
+    margin: 0 2em;
+    padding: 3.5em 2em;
+    position: absolute;
+  }
+
+  .container {
+    min-height: 100%;
+  }
+
+  .header-logo {
+    height: 1.5em;
+  }
+
+  .intro {
+    flex-direction: row-reverse;
+  }
+
+  .intro-image {
+    background: url(../images/hero-desktop.jpg) no-repeat center top;
+    background-size: cover;
+    flex: 0.8;
+    height: unset;
+  }
+
+  .intro-content-wrapper {
+    margin: 0 2em;
+    max-width: 32rem;
+    text-align: start;
+  }
+
+  .intro-content {
+    background: url(../images/bg-pattern-desktop.svg) no-repeat center bottom;
+    background-size: cover;
+    display: flex;
+    flex: 1.2;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8em 0;
+  }
+
+  .intro-heading {
+    font-size: 3rem;
+  }
+
+  .footer {
+    right: 50%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .header {
+    margin: 0 4em;
+  }
+
+  .header-logo {
+    height: unset;
+  }
+
+  .intro-content-wrapper {
+    margin: 0 4em;
+  }
+
+  .intro-heading {
+    font-size: 3.5rem;
+  }
+
+  .intro-body {
+    font-size: 1rem;
+  }
+
+  .input-wrapper {
+    height: 3.25em;
+    padding-right: 4em;
+  }
+
+  .submit-btn {
+    height: 3.25em;
+    padding-left: 2.25em;
+    padding-right: 2.25em;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .header {
+    margin-left: 8em;
+    margin-right: 8em;
+  }
+
+  .intro-content-wrapper {
+    max-width: 40rem;
+    margin-left: 8em;
+    margin-right: 8em;
+  }
+
+  .intro-heading {
+    font-size: 4.5rem;
+  }
+
+  .intro-body {
+    font-size: 1.25rem;
+  }
+
+  .input-wrapper {
+    height: 3.75em;
+    padding-left: 2em;
+    padding-right: 6em;
+  }
+
+  .form-input {
+    font-size: 1rem;
+  }
+
+  .submit-btn {
+    height: 3.75em;
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+}

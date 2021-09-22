@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Mentor | Base apparel coming soon</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <img src="./images/logo.svg" alt="Base Apparel" class="header-logo">
+        </header>
+        <main class="intro">
+            <div class="intro-image" aria-hidden="true"></div>
+            <section class="intro-content">
+                <div class="intro-content-wrapper">
+                    <h1 class="intro-heading"><span>We're</span> Coming Soon</h1>
+                    <p class="intro-body">
+                        Hello fellow shoppers! We're currently building our new fashion store.
+                        Add your email below to stay up-to-date with announcements and our launch deals.
+                    </p>
+                    <div class="cta-form-wrapper">
+                        <form action="#" class="js-form" novalidate>
+                            <label for="email-address" class="sr-only">Email Address</label>
+                            <div class="input-wrapper">
+                                <input
+                                    type="email"
+                                    name="email"
+                                    id="email-address"
+                                    placeholder="Email Address"
+                                    pattern="[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                                    required
+                                    aria-invalid="false"
+                                    aria-errormessage="email-address-error"
+                                    aria-live="off"
+                                    class="form-input"
+                                >
+                                <img src="./images/icon-error.svg" alt="" class="input-error-icon">
+                                <button type="submit" class="submit-btn">
+                                    <span class="sr-only">Submit</span>
+                                    <img src="./images/icon-arrow.svg" alt="">
+                                </button>
+                            </div>
+                            <span id="email-address-error" class="input-error"></span>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <small class="attribution">
+                Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+                Coded by <a href="https://github.com/elidrissidev">Mohamed ELIDRISSI</a>.
+            </small>
+        </footer>
+    </div>
+    <script src="./js/validation.js" type="module"></script>
+</body>
+</html>
